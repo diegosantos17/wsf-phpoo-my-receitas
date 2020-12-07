@@ -15,9 +15,8 @@ use PHPMailer\PHPMailer\Exception;
 
 class Email {
 
-    static function enviarEmail(){
-
-            
+    static function enviarEmail()
+    {
         try
         {
             // Instância da classe
@@ -50,7 +49,7 @@ class Email {
         }
         catch (Exception $e)
         {
-            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            Log::error("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
             return false;
         }
     }

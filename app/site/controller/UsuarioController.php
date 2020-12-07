@@ -4,6 +4,7 @@ namespace app\site\controller;
 
 use app\core\Controller;
 use app\site\crosscuting\Email;
+use app\site\crosscuting\Log;
 
 class UsuarioController extends Controller
 {
@@ -31,6 +32,7 @@ class UsuarioController extends Controller
     {
 
         $emailEnviado = Email::enviarEmail();
+        Log::debug("Recuperando senha");
 
         $this->load("usuario/esqueci", [
             'response' =>
